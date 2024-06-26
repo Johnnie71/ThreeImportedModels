@@ -21,9 +21,13 @@ const scene = new THREE.Scene()
 const gtlfLoader = new GLTFLoader();
 
 gtlfLoader.load(
-    '/models/Duck/glTF/Duck.gltf',
+    '/models/FlightHelmet/glTF/FlightHelmet.gltf',
     (gtlf) => {
-        scene.add(gtlf.scene.children[0])
+        console.log(gtlf.scene)
+        // scene.add(gtlf.scene.children[0])
+        while(gtlf.scene.children.length){
+            scene.add(gtlf.scene.children[0])
+        }
     }
 )
 
