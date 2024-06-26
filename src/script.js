@@ -23,10 +23,9 @@ const gtlfLoader = new GLTFLoader();
 gtlfLoader.load(
     '/models/FlightHelmet/glTF/FlightHelmet.gltf',
     (gtlf) => {
-        console.log(gtlf.scene)
-        // scene.add(gtlf.scene.children[0])
-        while(gtlf.scene.children.length){
-            scene.add(gtlf.scene.children[0])
+        const children = [...gtlf.scene.children]
+        for(const child of children){
+            scene.add(child)
         }
     }
 )
